@@ -1,6 +1,6 @@
 {
   "name": "@twinklecube/create-ui-library",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "twinklecube ui - a react library to create and manage UIs... ",
   "bin": "./bin/cli.js",
   "main": "dist/cjs/src/index.js",
@@ -13,7 +13,20 @@
     "build": "npm run build-remove && rollup -c && npx tsc",
     "dev": "webpack serve"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "javascript",
+    "typescript",
+    "styled-components",
+    "react 18",
+    "component-library",
+    "component library",
+    "ui-library",
+    "ui",
+    "react-component",
+    "react component",
+    "components"
+  ],
   "author": "malinsamaree",
   "license": "ISC",
   "devDependencies": {
