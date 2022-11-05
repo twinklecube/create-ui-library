@@ -15,7 +15,7 @@ const runCommand = command => {
 };
 
 const repoName = process.argv[2];
-const gitCheckoutCommand = `git clone --depth 1 https://github.com/malinsamaree/ui-library.git ${repoName}/temp`;
+const gitCheckoutCommand = `git clone --depth 1 https://github.com/twinklecube/create-ui-library.git ${repoName}/temp`;
 
 const installDepsCommand = `cd ${repoName} && npm install`;
 const setupNameCommand = `cd ${repoName} && npm pkg set name=${repoName}`;
