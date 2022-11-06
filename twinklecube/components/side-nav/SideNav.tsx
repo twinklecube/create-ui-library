@@ -11,6 +11,7 @@ const SideNav = () => {
                 <h4>Atoms</h4>
                     <ul>
                         <li><Link to="/chip">chip</Link></li>
+                        <li><Link to="/icon">icon</Link></li>
                         {/*more routes come here*/}
                     </ul>
 
