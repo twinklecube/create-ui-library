@@ -107,7 +107,7 @@ install emotion. <br />
 `npm i @emotion/styled`
 </p>
 <p>
-then, just import as usual you are good to go.<br />
+then, just import as usual. you are good to go.<br />
 `import styled from @emotion/styled`
 </p>
 
