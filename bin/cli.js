@@ -30,7 +30,7 @@ if(!checkedOut) process.exit(-1);
 
 fs.rmSync(`./${repoName}/temp/.git`, {recursive: true, force: true});
 fs.rmSync(`./${repoName}/temp/dist`, {recursive: true, force: true});
-fs.rmSync(`./${repoName}/temp/.gitignore`);
+if(fs.existsSync(`./${repoName}/temp/.gitignore`)) {fs.rmSync(`./${repoName}/temp/.gitignore`)};
 fs.cpSync(`./${repoName}/temp`, `./${repoName}`, {recursive: true});
 fs.rmSync(`./${repoName}/temp/`, {recursive: true, force: true});
 
