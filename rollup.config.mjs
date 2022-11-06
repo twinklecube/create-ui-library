@@ -2,6 +2,7 @@ import {babel} from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from "@rollup/plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
+import replace from "@rollup/plugin-replace";
 
 import {createRequire} from "module";
 const require = createRequire(import.meta.url);
@@ -32,6 +33,10 @@ export default {
             requireReturnsDefault: "auto"
         }),
         resolve({extensions}),
+        replace({
+            'process.env.NODE_ENV': JSON.stringify('production'),
+            preventAssignment: true
+        }),
         babel({
             extensions: extensions,
             babelHelpers: 'bundled',
