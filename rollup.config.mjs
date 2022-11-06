@@ -2,9 +2,14 @@ import {babel} from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from "@rollup/plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
+import replace from "@rollup/plugin-replace";
 
+import {createRequire} from "module";
+const require = createRequire(import.meta.url);
+const packageJson = require("./package.json");
+const peerDependencies = Object.keys(packageJson.peerDependencies);
 const extensions = [
-    '.js', '.jsx', '.ts', '.tsx', '.css', '.scss',
+    '.js', '.jsx', '.ts', '.tsx',
 ];
 
 export default {
@@ -28,10 +33,17 @@ export default {
             requireReturnsDefault: "auto"
         }),
         resolve({extensions}),
+        replace({
+            'process.env.NODE_ENV': JSON.stringify('production'),
+            preventAssignment: true
+        }),
         babel({
-            extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            extensions: extensions,
             babelHelpers: 'bundled',
             exclude: ['node_modules/**']
         })
+    ],
+    external: [
+        ...peerDependencies
     ]
 }

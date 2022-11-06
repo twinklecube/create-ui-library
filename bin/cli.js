@@ -16,9 +16,10 @@ const runCommand = command => {
 
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/twinklecube/create-ui-library.git ${repoName}/temp`;
+const packageName = repoName !== '.' ?? 'ui-library'
 
 const installDepsCommand = `cd ${repoName} && npm install`;
-const setupNameCommand = `cd ${repoName} && npm pkg set name=${repoName}`;
+const setupNameCommand = `cd ${repoName} && npm pkg set name=${packageName}`;
 const setupVersionCommand = `cd ${repoName} && npm pkg set version=1.0.0`;
 const setupDeleteBinCommand = `cd ${repoName} && npm pkg delete bin`;
 
@@ -28,9 +29,15 @@ console.log(`\nCloning the repository...\n`);
 const checkedOut = runCommand(gitCheckoutCommand);
 if(!checkedOut) process.exit(-1);
 
-fs.rmSync(`./${repoName}/temp/.git`, {recursive: true, force: true});
-fs.rmSync(`./${repoName}/temp/dist`, {recursive: true, force: true});
-if(fs.existsSync(`./${repoName}/temp/.gitignore`)) {fs.rmSync(`./${repoName}/temp/.gitignore`)};
+if(fs.existsSync(`./${repoName}/temp/.git`)) {
+    fs.rmSync(`./${repoName}/temp/.git`, {recursive: true, force: true})
+};
+if(fs.existsSync(`./${repoName}/temp/dist`)) {
+    fs.rmSync(`./${repoName}/temp/dist`, {recursive: true, force: true})
+};
+if(fs.existsSync(`./${repoName}/temp/.gitignore`)) {
+    fs.rmSync(`./${repoName}/temp/.gitignore`)
+};
 fs.cpSync(`./${repoName}/temp`, `./${repoName}`, {recursive: true});
 fs.rmSync(`./${repoName}/temp/`, {recursive: true, force: true});
 
