@@ -16,9 +16,10 @@ const runCommand = command => {
 
 const repoName = process.argv[2];
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/twinklecube/create-ui-library.git ${repoName}/temp`;
+const packageName = repoName !== '.' ?? 'ui-library'
 
 const installDepsCommand = `cd ${repoName} && npm install`;
-const setupNameCommand = `cd ${repoName} && npm pkg set name=${repoName}`;
+const setupNameCommand = `cd ${repoName} && npm pkg set name=${packageName}`;
 const setupVersionCommand = `cd ${repoName} && npm pkg set version=1.0.0`;
 const setupDeleteBinCommand = `cd ${repoName} && npm pkg delete bin`;
 
