@@ -44,7 +44,6 @@ This command will create the 'dist' folder and put the bundled files there
     css and modules, sass/scss and modules, less and 
     modules as well as styled-components are enabled in default
 </p>
-<p>@emotion is not supported yet</p>
 
 <h3>How to create a new component</h3>
 <ul>
@@ -95,12 +94,23 @@ This command will create the 'dist' folder and put the bundled files there
 </ul>
 
 <h3>styled-components</h3>
-<p>version 4.4.1</p>
+<p>version 5.3.6</p>
 <p>
     styled-components are installed and ready to use
     <br /> just import as usual and that's it
     <br /> `import styled from "styled-components"`
 </p>
+
+<h3>@emotion</h3>
+<p>
+install emotion. <br />
+`npm i @emotion/styled`
+</p>
+<p>
+then, just import as usual you are good to go.<br />
+`import styled from @emotion/styled`
+</p>
+
 
 <h3>
     More documentation and features will follow

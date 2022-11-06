@@ -1,6 +1,7 @@
 import React, {ReactNode} from 'react';
 import {ChipType} from "./types";
 import {ChipWrapper} from "./style";
+import {Icon} from "../icon/Icon";
 
 interface Props {
     children: ReactNode;
@@ -18,6 +19,7 @@ export const Chip = ({
     return (
         <ChipWrapper error={error} active={active} type={type}>
             {children}
+            {type === ChipType.ICON && <Icon />}
         </ChipWrapper>
     );
 };

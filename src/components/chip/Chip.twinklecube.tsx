@@ -4,7 +4,7 @@ import {ChipType} from "./types";
 
 const ChipTwinklecube = () => {
     return (
-        <Chip type={ChipType.MENU} active={true}>sample chip</Chip>
+        <Chip type={ChipType.ICON} active={true}>sample chip</Chip>
     );
 };
 
