@@ -1,4 +1,4 @@
-import React from '../../../node_modules/react/index.js';
+import React from 'react';
 import style from './style.module.css.js';
 import './styles.css.js';
 import './sassstyles.scss.js';

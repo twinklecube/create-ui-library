@@ -1,4 +1,4 @@
-import React from '../../../node_modules/react/index.js';
+import React from 'react';
 import style from './style.module.scss.js';
 import { OverlayHeader } from './style.js';
 

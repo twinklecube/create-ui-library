@@ -1,5 +1,5 @@
 import { taggedTemplateLiteral as _taggedTemplateLiteral } from '../../../_virtual/_rollupPluginBabelHelpers.js';
-import styled from '../../../node_modules/styled-components/dist/styled-components.esm.js';
+import styled from 'styled-components';
 import { ChipType } from './types.js';
 
 var _templateObject;

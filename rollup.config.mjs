@@ -3,8 +3,12 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from "@rollup/plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
 
+import {createRequire} from "module";
+const require = createRequire(import.meta.url);
+const packageJson = require("./package.json");
+const peerDependencies = Object.keys(packageJson.peerDependencies);
 const extensions = [
-    '.js', '.jsx', '.ts', '.tsx', '.css', '.scss',
+    '.js', '.jsx', '.ts', '.tsx',
 ];
 
 export default {
@@ -29,9 +33,12 @@ export default {
         }),
         resolve({extensions}),
         babel({
-            extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            extensions: extensions,
             babelHelpers: 'bundled',
             exclude: ['node_modules/**']
         })
+    ],
+    external: [
+        ...peerDependencies
     ]
 }

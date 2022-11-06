@@ -1,4 +1,4 @@
-import React from '../../../node_modules/react/index.js';
+import React from 'react';
 import { ChipType } from './types.js';
 import { ChipWrapper } from './style.js';
 
