@@ -30,21 +30,21 @@ if(!checkedOut) process.exit(-1);
 
 fs.rmSync(`./${repoName}/temp/.git`, {recursive: true, force: true});
 fs.rmSync(`./${repoName}/temp/dist`, {recursive: true, force: true});
-// fs.rmSync(`./${repoName}/temp/.gitignore`);
-// fs.cpSync(`./${repoName}/temp`, `./${repoName}`, {recursive: true});
-// fs.rmSync(`./${repoName}/temp/`, {recursive: true, force: true});
+fs.rmSync(`./${repoName}/temp/.gitignore`);
+fs.cpSync(`./${repoName}/temp`, `./${repoName}`, {recursive: true});
+fs.rmSync(`./${repoName}/temp/`, {recursive: true, force: true});
 
 console.log(`\nSetting up the project...`);
-// runCommand(setupNameCommand);
-// runCommand(setupVersionCommand);
-// runCommand(setupDeleteBinCommand);
+runCommand(setupNameCommand);
+runCommand(setupVersionCommand);
+runCommand(setupDeleteBinCommand);
 
-// console.log(`\nInstalling dependencies...\n`);
-// const installedDeps = runCommand(installDepsCommand);
-// if(!installedDeps) process.exit(-1);
+console.log(`\nInstalling dependencies...\n`);
+const installedDeps = runCommand(installDepsCommand);
+if(!installedDeps) process.exit(-1);
 
-// fs.rmSync(`./${repoName}/bin`, {recursive: true, force: true});
+fs.rmSync(`./${repoName}/bin`, {recursive: true, force: true});
 
-// console.log("\nHappy hacking!!!\n");
-// console.log("you may start by typing the following\n");
-// console.log(`cd ${repoName} && npm run dev\n`);
+console.log("\nHappy hacking!!!\n");
+console.log("you may start by typing the following\n");
+console.log(`cd ${repoName} && npm run dev\n`);
