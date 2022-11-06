@@ -1,7 +1,6 @@
 
 <h1>twinklecubeUI is a React ui component library</h1>
 
-
 <h2>install:</h2>
 
 `npx @twinklecube/create-ui-library ui-library`
