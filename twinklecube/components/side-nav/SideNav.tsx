@@ -18,7 +18,7 @@ const SideNav = () => {
                 {/*following is another category*/}
                 <h4>Molecules</h4>
                 <ul>
-                    <li></li>
+                    <li><Link to="/card">card</Link></li>
                 </ul>
 
             </nav>

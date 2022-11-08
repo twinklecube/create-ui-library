@@ -7,6 +7,7 @@ module.exports = {
     entry: path.resolve(__dirname, appdir, 'index.tsx'),
     output: {
         path: path.join(__dirname, appdir, 'dist'),
+        publicPath: "",
         filename: "index.js"
     },
     devServer: {
@@ -45,6 +46,10 @@ module.exports = {
                     "less-loader"
                 ],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif|woff|woff2|ttf|otf|eot)$/i,
+                type: "asset/resource"
             }
         ]
     },
