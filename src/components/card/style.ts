@@ -1,7 +1,7 @@
 import styled from "styled-components";
-// import customFontWoff from '../../assets/fonts/big-party-blue.woff';
-// import customFontWoff2 from '../../assets/fonts/big-party-blue.woff2';
-// import img from '../../assets/images/olympia-park-munich-min.jpg';
+import customFontWoff from '../../assets/fonts/big-party-blue.woff';
+import customFontWoff2 from '../../assets/fonts/big-party-blue.woff2';
+import img from '../../assets/images/olympia-park-munich-min.jpg';
 
 export const CardWrapper = styled.div`
     width: 300px;
@@ -12,7 +12,11 @@ export const CardWrapper = styled.div`
 `;
 
 export const CardTitle = styled.div`
-    
+    @font-face {
+      font-family: 'Custom Font';
+      src: url(${customFontWoff2}) format('woff2'),
+           url(${customFontWoff}) format('woff');
+    }
 
     position: absolute;
     bottom: 15px;
@@ -20,5 +24,5 @@ export const CardTitle = styled.div`
     font-size: 48px;
     color: white; 
     font-family: 'Custom Font';
-    
+    background-image: url(${img});
 `;

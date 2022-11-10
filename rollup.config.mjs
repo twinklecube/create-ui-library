@@ -42,6 +42,12 @@ export default {
             extensions: extensions,
             babelHelpers: 'bundled',
             exclude: ['node_modules/**']
+        }),
+        url({
+            include : [
+                '**/*.svg', '**/*.png', '**/*.jp(e)?g', '**/*.gif', '**/*.webp', '**/*.woff2', '**/*.woff',
+                '**/*.ttf', '**/*.otf', '**/*.eot'
+            ]
         })
     ],
     external: [
