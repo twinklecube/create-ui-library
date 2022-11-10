@@ -24,7 +24,7 @@ export default {
         {
             dir: './dist/esm/',
             format: 'esm',
-            preserveModules: true
+            // preserveModules: true
         },
     ],
     plugins: [
