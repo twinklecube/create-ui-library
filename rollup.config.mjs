@@ -47,8 +47,7 @@ export default {
             include : [
                 '**/*.svg', '**/*.png', '**/*.jp(e)?g', '**/*.gif', '**/*.webp', '**/*.woff2', '**/*.woff',
                 '**/*.ttf', '**/*.otf', '**/*.eot'
-            ],
-            fileName: '[dirname][hash][extname]',
+            ]
         })
     ],
     external: [
