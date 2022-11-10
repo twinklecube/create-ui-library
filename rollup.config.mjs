@@ -10,7 +10,7 @@ const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");
 const peerDependencies = Object.keys(packageJson.peerDependencies);
 const extensions = [
-    '.js', '.jsx', '.ts', '.tsx',
+    '.js', '.jsx', '.ts', '.tsx', '.jpg'
 ];
 
 export default {
@@ -47,7 +47,8 @@ export default {
             include : [
                 '**/*.svg', '**/*.png', '**/*.jp(e)?g', '**/*.gif', '**/*.webp', '**/*.woff2', '**/*.woff',
                 '**/*.ttf', '**/*.otf', '**/*.eot'
-            ]
+            ],
+            fileName: '[dirname][hash][extname]'
         })
     ],
     external: [

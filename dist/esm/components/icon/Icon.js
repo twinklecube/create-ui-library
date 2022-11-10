@@ -1,5 +1,8 @@
 import React from 'react';
-import { IconWrapper } from "./style";
-export const Icon = () => {
-    return (React.createElement(IconWrapper, null, "i"));
+import { IconWrapper } from './style.js';
+
+var Icon = function Icon() {
+  return /*#__PURE__*/React.createElement(IconWrapper, null, "i");
 };
+
+export { Icon };
