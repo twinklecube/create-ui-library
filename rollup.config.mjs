@@ -10,7 +10,7 @@ const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");
 const peerDependencies = Object.keys(packageJson.peerDependencies);
 const extensions = [
-    '.js', '.jsx', '.ts', '.tsx', '.jpg'
+    '.js', '.jsx', '.ts', '.tsx'
 ];
 
 export default {
