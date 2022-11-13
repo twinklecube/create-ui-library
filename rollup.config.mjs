@@ -3,13 +3,14 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from "@rollup/plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
 import replace from "@rollup/plugin-replace";
+import url from "@rollup/plugin-url";
 
 import {createRequire} from "module";
 const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");
 const peerDependencies = Object.keys(packageJson.peerDependencies);
 const extensions = [
-    '.js', '.jsx', '.ts', '.tsx',
+    '.js', '.jsx', '.ts', '.tsx'
 ];
 
 export default {
@@ -41,6 +42,13 @@ export default {
             extensions: extensions,
             babelHelpers: 'bundled',
             exclude: ['node_modules/**']
+        }),
+        url({
+            include : [
+                '**/*.svg', '**/*.png', '**/*.jp(e)?g', '**/*.gif', '**/*.webp', '**/*.woff2', '**/*.woff',
+                '**/*.ttf', '**/*.otf', '**/*.eot'
+            ],
+            fileName: '[dirname][hash][extname]'
         })
     ],
     external: [
