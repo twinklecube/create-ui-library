@@ -1,19 +1,19 @@
 
 <h1>twinklecubeUI is a React ui component library</h1>
 
-<h2>install:</h2>
+<h2>Install:</h2>
 
 `npx @twinklecube/create-ui-library ui-library`
-<p>required node version 16.7.0 or higher</p>
-<p>
+required node version 16.7.0 or higher<br />
+<br />
 Here the 'ui-library' is the package/directory name... so, it's your choice<br> 
 This command will create a folder called 'ui-library' and install the project there
-</p>
+
 
 `npx @twinklecube/create-ui-library .`
-<p>
+<br />
 This command will install the package in the current directory
-</p>
+
 
 <ul>
     <li>React 18</li>
@@ -22,6 +22,7 @@ This command will install the package in the current directory
     <li>scss/sass, modules</li>
     <li>less, less modules</li>
     <li>styled-components</li>
+    <li>@emotion</li>
 </ul>
 
 <h2>Run in development server:</h2>
@@ -39,11 +40,9 @@ This command will create the 'dist' folder and put the bundled files there
 <h2>
     Documentation
 </h2>
+css and modules, sass/scss and modules, less and 
+modules as well as styled-components are enabled in default
 
-<p>
-    css and modules, sass/scss and modules, less and 
-    modules as well as styled-components are enabled in default
-</p>
 
 <h3>How to create a new component</h3>
 <ul>
@@ -94,23 +93,39 @@ This command will create the 'dist' folder and put the bundled files there
 </ul>
 
 <h3>styled-components</h3>
-<p>version 5.3.6</p>
-<p>
-    styled-components are installed and ready to use
-    <br /> just import as usual and that's it
-    <br /> `import styled from "styled-components"`
-</p>
+version 5.3.6
+<br />
+styled-components are installed and ready to use
+<br /> just import as usual and that's it
+<br /> `import styled from "styled-components"`
+
 
 <h3>@emotion</h3>
-<p>
 install emotion. <br />
 `npm i @emotion/styled`
-</p>
-<p>
+<br />
 then, just import as usual. you are good to go.<br />
 `import styled from @emotion/styled`
-</p>
 
+<h3>Limitations with styled-components and @emotion</h3>
+if you use styled-components or @emotion in this ui-library, please be mindful, that, 
+<ol>
+    <li>you upload the library to a remote repository (eg. github, bitbucket, etc...) first</li>
+    <li>
+        and then install the ui-library in to any of your intended apps from the remote repository<br />
+        eg. `npm install git+https://github.com/your-user-name/your-repo-name.git`
+    </li>
+</ol>
+
+if you install the ui-library in another app locally <br />
+eg:<br />
+`npm i ../ui-library` or <br />
+`npm link ui-library` <br />
+
+you will get `invalid hook call` runtime error when you run your app on devServer or when you 
+run your app through the `dist` folder<br />
+This seems like a wierd bug... and anyone out there is most welcome to have a look :) <br />
+`npm clone https://github.com/twinklecube/create-ui-library.git`
 
 <h3>
     More documentation and features will follow
@@ -119,9 +134,12 @@ then, just import as usual. you are good to go.<br />
 <h3>
     Please note, that twinklecube is very new... there may be many hiccups.
 </h3>
-<p>
-    please be good enough to inform us about any bugs, etc... twinklecubeui@gmail.com
-</p>
+
+please be good enough to inform us about any bugs <br />
+<a href="https://github.com/twinklecube/create-ui-library/issues">
+https://github.com/twinklecube/create-ui-library/issues
+</a>
+
 
 
 
