@@ -1,10 +1,11 @@
 .side-nav-wrapper {
-    background-color: green;
     width: 200px;
     border-right: solid 1px #eaeaea;
     padding: 30px;
     background-color: #eaeaea;
     color: #333333;
+    height: calc(100vh - 50px);
+    overflow: auto;
 }
 
 .side-nav-wrapper h4 {
