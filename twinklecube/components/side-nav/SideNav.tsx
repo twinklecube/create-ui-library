@@ -7,7 +7,6 @@ const SideNav = () => {
     return (
         <div className={style["side-nav-wrapper"]}>
             <nav>
-
                 <h4>Atoms</h4>
                     <ul>
                         <li><Link to="/chip">chip</Link></li>
@@ -20,7 +19,6 @@ const SideNav = () => {
                 <ul>
                     <li><Link to="/card">card</Link></li>
                 </ul>
-
             </nav>
         </div>
     );
