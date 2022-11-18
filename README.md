@@ -6,14 +6,11 @@
 `npx @twinklecube/create-ui-library ui-library`
 required node version 16.7.0 or higher<br />
 <br />
-Here the 'ui-library' is the package/directory name... so, it's your choice<br> 
-This command will create a folder called 'ui-library' and install the project there
-
-
+Here the 'ui-library' is the package/directory name... so, it's your choice<br /> 
+This command will create a folder called 'ui-library' and install the project there<br />
 `npx @twinklecube/create-ui-library .`
 <br />
 This command will install the package in the current directory
-
 
 <ul>
     <li>React 18</li>
@@ -28,13 +25,13 @@ This command will install the package in the current directory
 <h2>Run in development server:</h2>
 
 `npm run dev`
-<br>
+<br />
 This command will start the development server on port 3030
 
 <h2>Build:</h2>
 
 `npm run build`
-<br>
+<br />
 This command will create the 'dist' folder and put the bundled files there
 
 <h2>
@@ -43,8 +40,8 @@ This command will create the 'dist' folder and put the bundled files there
 css and modules, sass/scss and modules, less and 
 modules as well as styled-components are enabled in default
 
-
 <h3>How to create a new component</h3>
+
 <ul>
     <li>
         Create a new folder inside src > components 
@@ -59,6 +56,7 @@ modules as well as styled-components are enabled in default
 </ul>
 
 <h3>How to include your component in the twincklecube dashbord</h3>
+
 <ul>
     <li>
         Inside the component folder created previously, create the corresponding 
@@ -93,6 +91,7 @@ modules as well as styled-components are enabled in default
 </ul>
 
 <h3>styled-components</h3>
+
 version 5.3.6
 <br />
 styled-components are installed and ready to use
@@ -101,6 +100,7 @@ styled-components are installed and ready to use
 
 
 <h3>@emotion</h3>
+
 install emotion. <br />
 `npm i @emotion/styled`
 <br />
@@ -108,6 +108,7 @@ then, just import as usual. you are good to go.<br />
 `import styled from @emotion/styled`
 
 <h3>Limitations with styled-components and @emotion</h3>
+
 if you use styled-components or @emotion in this ui-library, please be mindful, that, 
 <ol>
     <li>you upload the library to a remote repository (eg. github, bitbucket, etc...) first</li>
@@ -126,6 +127,58 @@ you will get `invalid hook call` runtime error when you run your app on devServe
 run your app through the `dist` folder<br />
 This seems like a wierd bug... and anyone out there is most welcome to have a look :) <br />
 `npm clone https://github.com/twinklecube/create-ui-library.git`
+
+<h3>Assets - images/fonts</h3>
+
+assets are copied in to the `dist` folder and NOT base64 encoded <br />
+
+Following formats are supported<br />
+Image formats: `jpg, jpeg, svg, png, gif, webp`<br />
+Font formats: `woff2, woff, eot, ttf, otf`<br />
+
+<h4>Add any other image or font format</h4>
+
+Step 1: open `webpack.config.js` which is located in the root folder<br />
+Step 2: find `test: /\.(jpg|jpeg|png|gif|svg|webp|woff|woff2|eot|ttf|otf)$/i`<br />
+Step 4: include the new file/format extension in this list seperated by a pipe character<br />
+Step 5: open `rollup.config.js` which is located in the root folder<br />
+Step 6: find `include : [
+'**/*.svg', '**/*.png', '**/*.jp(e)?g', '**/*.gif', '**/*.webp', '**/*.woff2', '**/*.woff',
+'**/*.ttf', '**/*.otf', '**/*.eot'
+]`<br />
+Step 7: include the new file/format extension in this array seperated by a comma. eg `'**/*.your-file-extension'`<br />
+Step 5: open `module.d.ts` which is located in the src folder<br />
+Step 6: add `declare module *.your-file-extension;` at the end of the file.<br />
+
+<h4>How to use assets in your app</h4>
+
+when this project is built, assets(images/fonts) are copied in to the dist folder. <br />
+in your app, you have to copy these assets in to the build folder (eg. `dist` folder)
+of the app in order to be referenced and served correctly<br />
+for example you can do the following in your webpack config file
+
+`const CopyPlugin = require('copy-webpack-plugin');`
+
+`module.exports = {`
+
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'node_modules', '<your-ui-library>', 'dist', 'esm', 'images'),
+                    to: path.join(__dirname, 'dist', 'images'),
+                    noErrorOnMissing: true
+                },
+                {
+                    from: path.resolve(__dirname, 'node_modules', <your-ui-library>', 'dist', 'esm', 'fonts'),
+                    to: path.join(__dirname, 'dist', 'fonts'),
+                    noErrorOnMissing: true
+                }
+            ]
+        })
+    ]
+`}`
+
 
 <h3>
     More documentation and features will follow
