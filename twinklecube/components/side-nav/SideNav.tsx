@@ -9,15 +9,16 @@ const SideNav = () => {
             <nav>
                 <h4>Atoms</h4>
                     <ul>
-                        <li><Link to="/chip">chip</Link></li>
                         <li><Link to="/icon">icon</Link></li>
+                        <li><Link to="/chip">chip</Link></li>
+                        <li><Link to="/card">card</Link></li>
                         {/*more routes come here*/}
                     </ul>
 
                 {/*following is another category*/}
                 <h4>Molecules</h4>
                 <ul>
-                    <li><Link to="/card">card</Link></li>
+                    <li><Link to="/munich-card">munich-card</Link></li>
                 </ul>
             </nav>
         </div>

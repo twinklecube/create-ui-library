@@ -18,13 +18,9 @@ export const Chip = ({
     active
 }: Props) => {
     return (
-        <>
             <ChipWrapper error={error} active={active} type={type}>
                 {children}
                 {type === ChipType.ICON && <Icon />}
             </ChipWrapper>
-            <img src={img}/>
-            <div>malin</div>
-        </>
     );
 };

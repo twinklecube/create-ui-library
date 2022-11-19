@@ -6,6 +6,7 @@
     color: #333333;
     height: calc(100vh - 50px);
     overflow: auto;
+    font-family: Arial;
 }
 
 .side-nav-wrapper h4 {

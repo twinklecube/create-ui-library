@@ -1,10 +1,12 @@
 import React from 'react';
+// @ts-ignore
+import style from './style.module.css'
 
 const Homepage = () => {
     return (
-        <div>
+        <div className={style["homepage-wrapper"]}>
             <h1>UI Library</h1>
-            <h3>react | typescript</h3>
+            <h3>react 18 | typescript</h3>
         </div>
     );
 };
