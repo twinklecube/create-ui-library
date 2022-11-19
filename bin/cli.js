@@ -21,7 +21,8 @@ const packageName = repoName !== '.'? repoName : 'ui-library'
 const installDepsCommand = `cd ${repoName} && npm install`;
 const setupNameCommand = `cd ${repoName} && npm pkg set name=${packageName}`;
 const setupVersionCommand = `cd ${repoName} && npm pkg set version=1.0.0`;
-const setupDeleteBinCommand = `cd ${repoName} && npm pkg delete bin`;
+const deleteBinCommand = `cd ${repoName} && npm pkg delete bin`;
+const deleteRepository = `cd ${repoName} && npm pkg delete repository`;
 
 console.log(`\nCreating a new TwinkleCube UI app...`);
 
@@ -44,7 +45,8 @@ fs.rmSync(`./${repoName}/temp/`, {recursive: true, force: true});
 console.log(`\nSetting up the project...`);
 runCommand(setupNameCommand);
 runCommand(setupVersionCommand);
-runCommand(setupDeleteBinCommand);
+runCommand(deleteBinCommand);
+runCommand(deleteRepository);
 
 console.log(`\nInstalling dependencies...\n`);
 const installedDeps = runCommand(installDepsCommand);
@@ -54,5 +56,5 @@ fs.rmSync(`./${repoName}/bin`, {recursive: true, force: true});
 
 console.log("\nHappy hacking!!!\n");
 console.log("you may start by typing the following\n");
-const startScript = repoName !== '.'? `cd ${repoName} && npm start\n` : 'npm start\n'
+const startScript = repoName !== '.'? `cd ${repoName} && npm start\n` : 'npm start\n';
 console.log(startScript);
