@@ -12,6 +12,8 @@ export const ChipWrapper = styled.div<ChipWrapperProps>`
     display: inline-flex;
     gap: 10px;
     border-radius: 15px;
-    border: ${props => `2px solid ${props.error ? '#E0144C' : props.active ? '#81C6E8' : '#333333'}`};
+    border: ${props => `1px solid ${props.error ? '#E0144C' : props.active ? '#81C6E8' : '#C6950A'}`};
     cursor: pointer;
+    background-color: white;
+    font-family: Arial;
 `;
