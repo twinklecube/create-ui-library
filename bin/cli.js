@@ -54,4 +54,4 @@ fs.rmSync(`./${repoName}/bin`, {recursive: true, force: true});
 
 console.log("\nHappy hacking!!!\n");
 console.log("you may start by typing the following\n");
-console.log(`cd ${repoName} && npm run dev\n`);
+console.log(`cd ${repoName} && npm start\n`);

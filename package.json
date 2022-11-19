@@ -9,11 +9,15 @@
     "/dist"
   ],
   "scripts": {
-    "build-remove": "rimraf dist",
-    "build": "npm run build-remove && rollup -c && npx tsc",
-    "dev": "webpack serve"
+    "build": "npx rimraf dist && rollup -c && npx tsc",
+    "start": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twinklecube/create-ui-library.git"
   },
   "keywords": [
+    "twinklecube",
     "react",
     "javascript",
     "typescript",
@@ -27,8 +31,12 @@
     "react component",
     "components"
   ],
-  "author": "malinsamaree",
+  "author": "twinklecube",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/twinklecube/create-ui-library/issues"
+  },
+  "homepage": "https://github.com/twinklecube/create-ui-library#readme",
   "devDependencies": {
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.19.6",

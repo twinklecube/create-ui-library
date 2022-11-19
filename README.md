@@ -24,7 +24,7 @@ This command will install the package in the current directory
 
 <h2>Run in development server:</h2>
 
-`npm run dev`
+`npm start`
 <br />
 This command will start the development server on port 3030
 
