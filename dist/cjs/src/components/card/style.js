@@ -1,1 +1,0 @@
-"use strict";var e,r=require("../../../_virtual/_rollupPluginBabelHelpers.js"),p=require("styled-components").div(e||(e=r.taggedTemplateLiteral(["\n    width: 300px;\n    height: 250px;\n    border: solid 1px #eaeaea;\n    border-radius: 10px;\n    overflow: hidden;\n    filter: drop-shadow(2px 2px 2px #00000080);\n"])));exports.CardWrapper=p;
