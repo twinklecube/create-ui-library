@@ -1,0 +1,1 @@
+"use strict";require("../../../node_modules/style-inject/dist/style-inject.es.js")(".style-module_test-style__-IR21 {\r\n    width: 100px;\r\n    height: 100px;\r\n    background-color: green;\r\n}"),module.exports={"test-style":"style-module_test-style__-IR21",testStyle:"style-module_test-style__-IR21"};

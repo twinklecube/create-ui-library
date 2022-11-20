@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const appdir = 'twinklecube';
 
 module.exports = {
@@ -10,6 +11,7 @@ module.exports = {
         publicPath: "",
         filename: "index.js"
     },
+    devtool: 'eval-source-map',
     devServer: {
         port: 3030,
         historyApiFallback: true,
@@ -23,29 +25,64 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
+                test: /\.(css|s(a|c)ss)$/,
                 use: [
-                    "style-loader",
-                    "css-loader"
-                ]
-            },
-            {
-                test: /\.s(c|a)ss$/,
-                use: [
-                    "style-loader",
-                    "css-loader", 
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1,
+                            modules: {
+                                localIdentName: "[name]__[local]___[hash:base64:5]",
+                                exportLocalsConvention: 'camelCase'
+                            }
+                        }
+                    },
                     "sass-loader"
                 ],
+                include: /\.module\.(css|s(a|c)ss)$/,
+                exclude: /node_modules/
+            },
+            {
+                test: /\.(css|s(a|c)ss)$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1,
+                        }
+                    },
+                    "sass-loader"
+                ],
+                exclude: [/\.module\.(css|s(a|c)ss)$/, /node_modules/]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: {
+                                localIdentName: "[name]__[local]___[hash:base64:5]",
+                                exportLocalsConvention: 'camelCase'
+                            }
+                        }
+                    },
+                    "less-loader"
+                ],
+                include: /\.module\.less$/,
                 exclude: /node_modules/
             },
             {
                 test: /\.less$/,
                 use: [
-                    "style-loader",
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "less-loader"
                 ],
-                exclude: /node_modules/
+                exclude: [/\.module\.less$/, /node_modules/]
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif|webp|woff|woff2|ttf|otf|eot)$/i,
@@ -57,7 +94,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, appdir, 'index.html'),
             favicon: path.resolve(__dirname, appdir, 'favicon.ico')
-        })
+        }),
+        new MiniCssExtractPlugin()
     ],
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx']

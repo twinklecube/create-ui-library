@@ -6,7 +6,7 @@ import style from './style.module.css'
 
 const App = () => {
     return (
-        <div className={style["app-wrapper"]}>
+        <div className={style.appWrapper}>
             <Header />
             <Body />
         </div>

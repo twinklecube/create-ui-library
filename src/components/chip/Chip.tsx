@@ -2,7 +2,7 @@ import React, {ReactNode} from 'react';
 import {ChipType} from "./types";
 import {ChipWrapper} from "./style";
 import {Icon} from "../icon/Icon";
-import img from "../../assets/images/olympia-park-munich-min.jpg";
+import style from "./style.module.css";
 
 interface Props {
     children: ReactNode;
@@ -18,9 +18,12 @@ export const Chip = ({
     active
 }: Props) => {
     return (
+        <>
             <ChipWrapper error={error} active={active} type={type}>
                 {children}
                 {type === ChipType.ICON && <Icon />}
             </ChipWrapper>
+            <div className={style.testStyle}>malin</div>
+        </>
     );
 };
