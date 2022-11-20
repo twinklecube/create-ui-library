@@ -6,7 +6,7 @@ import style from "./style.module.css"
 
 const Body = () => {
     return (
-        <div className={style["body-wrapper"]}>
+        <div className={style.bodyWrapper}>
             <SideNav />
             <Container />
         </div>

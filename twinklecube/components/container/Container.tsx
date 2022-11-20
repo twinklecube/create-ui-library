@@ -11,7 +11,7 @@ import style from "./style.module.css"
 
 const Container = () => {
     return (
-        <div className={style["container-wrapper"]}>
+        <div className={style.containerWrapper}>
             <Routes>
                 <Route path="/" element={<Homepage />} />
                 <Route path="/chip" element={<ChipTwinklecube />} />
