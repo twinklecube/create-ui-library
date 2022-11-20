@@ -19,13 +19,11 @@ export default {
     output: [
         {
             dir: './dist/cjs/',
-            format: 'cjs',
-            preserveModules: true
+            format: 'cjs'
         },
         {
             dir: './dist/esm/',
-            format: 'esm',
-            // preserveModules: true
+            format: 'esm'
         },
     ],
     plugins: [
