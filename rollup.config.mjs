@@ -28,7 +28,11 @@ export default {
         },
     ],
     plugins: [
-        postcss (),
+        postcss ({
+            modules: {
+                localsConvention: 'camelCase',
+            }
+        }),
         commonjs({
             include: /node_modules/,
             requireReturnsDefault: "auto"

@@ -5,7 +5,7 @@ import style from "./style.module.css";
 
 const SideNav = () => {
     return (
-        <div className={style["side-nav-wrapper"]}>
+        <div className={style.sideNavWrapper}>
             <nav>
                 <h4>Atoms</h4>
                     <ul>
