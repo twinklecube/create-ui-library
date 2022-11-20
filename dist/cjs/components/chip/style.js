@@ -1,6 +1,6 @@
 'use strict';
 
-var _rollupPluginBabelHelpers = require('../../../_virtual/_rollupPluginBabelHelpers.js');
+var _rollupPluginBabelHelpers = require('../../_virtual/_rollupPluginBabelHelpers.js');
 var styled = require('styled-components');
 
 var _templateObject;

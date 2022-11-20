@@ -31,7 +31,8 @@ export default {
         postcss ({
             modules: {
                 localsConvention: 'camelCase',
-            }
+            },
+            extract: true
         }),
         commonjs({
             include: /node_modules/,
