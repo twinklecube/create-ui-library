@@ -23,7 +23,7 @@ export const Chip = ({
                 {children}
                 {type === ChipType.ICON && <Icon />}
             </ChipWrapper>
-            <div className={style.testStyle}></div>
+            <div className={style.testStyle}>malin</div>
         </>
     );
 };

@@ -4,6 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
 import replace from "@rollup/plugin-replace";
 import url from "@rollup/plugin-url";
+import {terser} from "rollup-plugin-terser";
 
 import {createRequire} from "module";
 const require = createRequire(import.meta.url);
@@ -24,7 +25,7 @@ export default {
         {
             dir: './dist/esm/',
             format: 'esm',
-            preserveModules: true
+            // preserveModules: true
         },
     ],
     plugins: [
@@ -32,7 +33,7 @@ export default {
             modules: {
                 localsConvention: 'camelCase',
             },
-            extract: true
+            inject: true,
         }),
         commonjs({
             include: /node_modules/,
@@ -54,7 +55,8 @@ export default {
                 '**/*.ttf', '**/*.otf', '**/*.eot'
             ],
             fileName: '[dirname][hash][extname]'
-        })
+        }),
+        terser()
     ],
     external: [
         ...peerDependencies

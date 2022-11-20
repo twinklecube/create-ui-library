@@ -11,6 +11,7 @@ module.exports = {
         publicPath: "",
         filename: "index.js"
     },
+    devtool: 'eval-source-map',
     devServer: {
         port: 3030,
         historyApiFallback: true,
