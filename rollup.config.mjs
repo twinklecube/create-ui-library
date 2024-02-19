@@ -4,7 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import postcss from "rollup-plugin-postcss";
 import replace from "@rollup/plugin-replace";
 import url from "@rollup/plugin-url";
-import {terser} from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 
 import {createRequire} from "module";
 const require = createRequire(import.meta.url);
