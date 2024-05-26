@@ -1,12 +1,11 @@
-
 <h1>twinklecubeUI is a React ui component library</h1>
 
 <h2>Install:</h2>
 
 `npx @twinklecube/create-ui-library ui-library`
-required node version 16.7.0 or higher<br />
+required node version 18.17.0 or higher<br />
 <br />
-Here the 'ui-library' is the package/directory name... so, it's your choice<br /> 
+Here the 'ui-library' is the package/directory name... so, it's your choice<br />
 This command will create a folder called 'ui-library' and install the project there<br />
 `npx @twinklecube/create-ui-library .`
 <br />
@@ -98,7 +97,6 @@ styled-components are installed and ready to use
 <br /> just import as usual and that's it
 <br /> `import styled from "styled-components"`
 
-
 <h3>@emotion</h3>
 
 install emotion. <br />
@@ -109,7 +107,8 @@ then, just import as usual. you are good to go.<br />
 
 <h3>Limitations with styled-components and @emotion</h3>
 
-if you use styled-components or @emotion in this ui-library, please be mindful, that, 
+if you use styled-components or @emotion in this ui-library, please be mindful, that,
+
 <ol>
     <li>you upload the library to a remote repository (eg. github, bitbucket, etc...) first</li>
     <li>
@@ -123,7 +122,7 @@ eg:<br />
 `npm i ../ui-library` or <br />
 `npm link ui-library` <br />
 
-you will get `invalid hook call` runtime error when you run your app on devServer or when you 
+you will get `invalid hook call` runtime error when you run your app on devServer or when you
 run your app through the `dist` folder<br />
 This seems like a wierd bug... and anyone out there is most welcome to have a look :) <br />
 `npm clone https://github.com/twinklecube/create-ui-library.git`
@@ -177,8 +176,8 @@ for example you can do the following in your webpack config file
             ]
         })
     ]
-`}`
 
+`}`
 
 <h3>
     More documentation and features will follow
@@ -192,7 +191,3 @@ please be good enough to inform us about any bugs <br />
 <a href="https://github.com/twinklecube/create-ui-library/issues">
 https://github.com/twinklecube/create-ui-library/issues
 </a>
-
-
-
-
